@@ -1,42 +1,11 @@
-// import React, { useState } from "react";
-// import LZoom from "./LZoom";
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import LZoom from './components/locuszoom'
+import React from "react";
+import "./App.css";
+import LZoomLocal from "./components/lzLocal";
 
 const App = () => {
-  // const [start, setStart] = useState(200073);
-  const [chr, setChr] = useState(16);
-  const [start, setStart] = useState(53563327);
-  const [end, setEnd] = useState(53909185);
-  const [variant, setVariant] = useState("16:53563327:T:C"); // Adjust this if you want to use the variant prop
-
-  const handleStartChange = (e) => setStart(Number(e.target.value));
-  const handleEndChange = (e) => setEnd(Number(e.target.value));
-  const handleVariantChange = (e) => setVariant(e.target.value);
-
   return (
     <div>
-      <h1>LocusZoom Plot</h1>
-      
-      <label>
-        Start: 
-        <input type="number" value={start} onChange={handleStartChange} />
-      </label>
-
-      <label>
-        End: 
-        <input type="number" value={end} onChange={handleEndChange} />
-      </label>
-
-      <label>
-        Variant: 
-        <input type="text" value={variant} onChange={handleVariantChange} />
-      </label>
-
-      <LZoom start={start} end={end} variant={variant} chr={chr} />
+      <LZoomLocal />
     </div>
   );
 };
